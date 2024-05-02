@@ -39,8 +39,7 @@ func main() {
 	// Função para obter informações do último objeto em um bucket
 	getLastObjectInfo := func(bucketName string) {
 		input := &s3.ListObjectsV2Input{
-			Bucket:  aws.String(bucketName),
-			MaxKeys: aws.Int64(1),
+			Bucket: aws.String(bucketName),
 		}
 		result, err := svc.ListObjectsV2(input)
 		if err != nil {
@@ -58,7 +57,7 @@ func main() {
 			fmt.Println()
 			fmt.Printf(color.YellowString("Último objeto em %s:\n"), bucketName)
 			fmt.Printf(color.CyanString("Nome: %s\n"), *lastObject.Key)
-			fmt.Printf(color.GreenString("Data de Modificação: %s\n"), lastModified.Format("2006-01-02 15:04:05"))
+			fmt.Printf(color.GreenString("Data de Modificação: %s\n"), lastModified.Format("02-01-2006 15:04:05"))
 			fmt.Printf(color.BlueString("Tamanho: %.2f MB\n"), sizeInMB)
 		} else {
 			fmt.Printf(color.RedString("Não há objetos em %s\n"), bucketName)
