@@ -54,11 +54,11 @@ func main() {
 			// Convertendo a data de modificação para o fuso horário de Brasília
 			lastModified := lastObject.LastModified.In(time.FixedZone("BRT", -3*60*60)) // UTC-3 (Brasília)
 			// Imprimir informações do objeto
-			fmt.Println()
 			fmt.Printf(color.YellowString("Último objeto em %s:\n"), bucketName)
 			fmt.Printf(color.CyanString("Nome: %s\n"), *lastObject.Key)
 			fmt.Printf(color.GreenString("Data de Modificação: %s\n"), lastModified.Format("02-01-2006 15:04:05"))
 			fmt.Printf(color.BlueString("Tamanho: %.2f MB\n"), sizeInMB)
+			fmt.Println()
 		} else {
 			fmt.Printf(color.RedString("Não há objetos em %s\n"), bucketName)
 		}
