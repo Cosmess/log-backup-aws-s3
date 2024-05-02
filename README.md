@@ -12,4 +12,4 @@ AWS_ACCESS_KEY_ID=sua-chave-de-acesso
 
 AWS_SECRET_ACCESS_KEY=sua-chave-secreta
 
-BUCKET_NAMES=lester-backup,mza-backup
+BUCKET_NAMES=backup1,backup2
